@@ -130,6 +130,12 @@ async def setup_webhook():
     response = requests.post(f"{TELEGRAM_API_URL}/setWebhook", json=data)
     return {"message": f"Webhook setup response: {response.text}"}
 
+
+@app.get("/get_webhook_info")
+async def get_webhook_info():
+    response = requests.post(f"{TELEGRAM_API_URL}/getWebhookInfo")
+    return response.json()
+
 @app.get("/")
 async def root():
     return {"status": "Bot is running!"}

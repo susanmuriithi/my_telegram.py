@@ -134,8 +134,8 @@ async def setup_webhook():
 async def root():
     return {"status": "Bot is running!"}
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     if not TELEGRAM_TOKEN:
-#         raise ValueError("TELEGRAM_TOKEN not set in environment variables")
-#     uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+if __name__ == "__main__":
+    import uvicorn
+    if not TELEGRAM_TOKEN:
+        raise ValueError("TELEGRAM_TOKEN not set in environment variables")
+    uvicorn.run(app, host="0.0.0.0", port=8000)
